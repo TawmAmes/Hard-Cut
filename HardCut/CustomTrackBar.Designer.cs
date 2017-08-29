@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "CustomTrackBar";
-            this.Size = new System.Drawing.Size(137, 128);
+            this.Size = new System.Drawing.Size(551, 64);
             this.ResumeLayout(false);
 
         }

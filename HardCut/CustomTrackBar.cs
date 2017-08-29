@@ -29,10 +29,10 @@ namespace HardCut
 
         #region variables
         private int min = 0;
-        private int max = 100;
+        private int max = 1000;
         private int selectedMin = 0;
-        private int selectedMax = 100;
-        private int value = 50;
+        private int selectedMax;
+        private int value;
 
         private int sliderWidth = 2;
         #endregion
@@ -57,8 +57,12 @@ namespace HardCut
             set
             {
                 selectedMin = value;
-                if (SelectionChanged != null)
-                    SelectionChanged(this, null);
+                if (AnythingChanged != null)
+                {
+                    //SelectionChanged(this, null);
+                    AnythingChanged(this, null);
+                }
+
                 Invalidate();
             }
         }
@@ -69,8 +73,11 @@ namespace HardCut
             set
             {
                 selectedMax = value;
-                if (SelectionChanged != null)
-                    SelectionChanged(this, null);
+                if (AnythingChanged != null)
+                {
+                    //SelectionChanged(this, null);
+                    AnythingChanged(this, null);
+                }
                 Invalidate();
             }
         }
@@ -81,8 +88,11 @@ namespace HardCut
             set
             {
                 this.value = value;
-                if (ValueChanged != null)
-                    ValueChanged(this, null);
+                if (AnythingChanged != null)
+                {
+                    //ValueChanged(this, null);
+                    AnythingChanged(this, null);
+                }
                 Invalidate();
             }
         }
@@ -106,10 +116,21 @@ namespace HardCut
         //Fired when Value changes.
         public event EventHandler ValueChanged;
 
+        //Fired if anything changes
+        public event EventHandler AnythingChanged;
+
 
         public CustomTrackBar()
         {
+            //Set default values
+            Value = (Max - Min) / 2;
+            SelectedMax = Max;
+
+            SliderWidth = SliderWidth / (Max - Min); //this line is horrible
+
             InitializeComponent();
+
+            
 
             //Avoid flickering
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
