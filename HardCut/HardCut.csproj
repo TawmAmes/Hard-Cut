@@ -80,12 +80,6 @@
     <Compile Include="TriangleSliderUC.designer.cs">
       <DependentUpon>TriangleSliderUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSlider.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlSlider.designer.cs">
-      <DependentUpon>UserControlSlider.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CustomTrackBar.resx">
       <DependentUpon>CustomTrackBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,9 +97,6 @@
     </Compile>
     <EmbeddedResource Include="TriangleSliderUC.resx">
       <DependentUpon>TriangleSliderUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlSlider.resx">
-      <DependentUpon>UserControlSlider.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
