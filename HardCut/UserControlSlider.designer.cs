@@ -1,6 +1,6 @@
-﻿namespace HardCut
+﻿namespace WindowsFormsApp1
 {
-    partial class TriangleSliderUC
+    partial class UserControlSlider
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(79, 106);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(350, 45);
-            this.trackBar1.TabIndex = 0;
-            // 
-            // TriangleSliderUC
+            // UserControlSlider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.trackBar1);
-            this.Name = "TriangleSliderUC";
-            this.Size = new System.Drawing.Size(552, 507);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.Name = "UserControlSlider";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UserControlSlider_Paint);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

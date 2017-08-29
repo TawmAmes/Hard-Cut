@@ -47,21 +47,12 @@ namespace HardCut
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);  
 
             PropertyConstructor();
-            UpdateTriangle();
-
-            //Paint += new PaintEventHandler(TriangleSliderUC_Paint);
-
-            //Get value from Form to offset triangle?
-            /*
-            ShiftX(triangle, 200);
-            ShiftY(triangle, 300);
-            FlipX(triangle);
-            */
+            UpdateTriangle(); //draw method
         }
 
         public void PropertyConstructor()
         {
-            hypotenuse = 100;
+            hypotenuse = 100; //default value
             finalPoint = Math.Sqrt(hypotenuse * hypotenuse - (hypotenuse * 0.5f) * (hypotenuse * 0.5f));
         }
 
@@ -78,14 +69,6 @@ namespace HardCut
 
             this.BackgroundImage = image;
         }
-
-        /*
-        void TriangleSliderUC_Paint(object sender, PaintEventArgs e)
-        {
-            //triangle = { Target, PointB, PointC };
-            e.Graphics.FillPolygon(Brushes.Orange, triangle);
-        }
-        */
 
         #region additional methods
 
