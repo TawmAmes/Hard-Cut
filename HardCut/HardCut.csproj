@@ -66,12 +66,6 @@
     <Compile Include="CustomTrackBar.Designer.cs">
       <DependentUpon>CustomTrackBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FloatingValueTrackBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FloatingValueTrackBar.Designer.cs">
-      <DependentUpon>FloatingValueTrackBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,17 +74,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TriangleSliderUC.cs">
+    <Compile Include="ToolboxCustomTrackBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TriangleSliderUC.designer.cs">
-      <DependentUpon>TriangleSliderUC.cs</DependentUpon>
+    <Compile Include="ToolboxCustomTrackBar.Designer.cs">
+      <DependentUpon>ToolboxCustomTrackBar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomTrackBar.resx">
       <DependentUpon>CustomTrackBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FloatingValueTrackBar.resx">
-      <DependentUpon>FloatingValueTrackBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -104,8 +95,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TriangleSliderUC.resx">
-      <DependentUpon>TriangleSliderUC.cs</DependentUpon>
+    <EmbeddedResource Include="ToolboxCustomTrackBar.resx">
+      <DependentUpon>ToolboxCustomTrackBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -114,9 +114,33 @@ namespace HardCut
             */
             
 
-            var frameRate = 60;
+            double frameRate = 60; //59.94 fps
+            int resWidth = 1920;
+            int resHeight = 1080;
+            int pictureBoxWidth = 0;
+            int pictureBoxHeight = 0;
+
+            if (resWidth/resHeight == 16/9)
+            {
+                Console.WriteLine("16:9 Resolution");
+                pictureBoxWidth = resWidth / 8;
+                pictureBoxHeight = resHeight / 8;
+            }
+            else
+            {
+                MessageBox.Show("Unknown video resolution");
+            }
+
+            pictureBox1.Width = pictureBoxWidth;
+            pictureBox1.Height = pictureBoxHeight;
+            pictureBox2.Width = pictureBoxWidth;
+            pictureBox2.Height = pictureBoxHeight;
+
+            Console.WriteLine(pictureBoxWidth + " " + pictureBoxHeight);
+
             TimeSpan t = TimeSpan.FromSeconds(startTime * frameRate);
-            string tFrameRate = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
+            //string tFrameRate = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
+            string tFrameRate = t.ToString(@"hh\:mm\:ss");
 
             //process.Refresh(); //************************************************
 
@@ -134,6 +158,9 @@ namespace HardCut
             }
             var firstFrameImage = resultLine;
             pictureBox1.ImageLocation = "output1.jpg";
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            process.Refresh();
 
             //getting image of last frame
             process.StartInfo.Arguments = "-ss " + endTime /*frameRate*/ + " -i " + filePath + " -vframes 1 -q:v 2 output2.jpg -y";
@@ -148,6 +175,7 @@ namespace HardCut
             }
             var lastFrameImage = resultLine;
             pictureBox2.ImageLocation = "output2.jpg";
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
             //process.StartInfo.Arguments = "-i " + filePath + " " + outputFileTextBox.Text + fileFormatComboBox.SelectedText;

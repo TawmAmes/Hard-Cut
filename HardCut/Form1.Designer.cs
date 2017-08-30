@@ -42,6 +42,7 @@
             this.firstFrameLabel = new System.Windows.Forms.Label();
             this.lastFrameLabel = new System.Windows.Forms.Label();
             this.convertButton = new System.Windows.Forms.Button();
+            this.toolboxCustomTrackBar1 = new HardCut.ToolboxCustomTrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.inputFileTextBox.Location = new System.Drawing.Point(95, 12);
             this.inputFileTextBox.Name = "inputFileTextBox";
             this.inputFileTextBox.Size = new System.Drawing.Size(233, 20);
-            this.inputFileTextBox.TabIndex = 5;
+            this.inputFileTextBox.TabIndex = 1;
             // 
             // outputFileTextBox
             // 
@@ -104,15 +105,15 @@
             ".mp4",
             ".mkv",
             ".mov"});
-            this.fileFormatComboBox.SelectedText = ".mp4";
             this.fileFormatComboBox.Location = new System.Drawing.Point(351, 47);
             this.fileFormatComboBox.Name = "fileFormatComboBox";
             this.fileFormatComboBox.Size = new System.Drawing.Size(108, 21);
             this.fileFormatComboBox.TabIndex = 8;
+            this.fileFormatComboBox.Text = ".mp4";
             // 
             // outputRichTextBox
             // 
-            this.outputRichTextBox.Location = new System.Drawing.Point(54, 592);
+            this.outputRichTextBox.Location = new System.Drawing.Point(54, 899);
             this.outputRichTextBox.Name = "outputRichTextBox";
             this.outputRichTextBox.Size = new System.Drawing.Size(551, 96);
             this.outputRichTextBox.TabIndex = 9;
@@ -137,7 +138,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox1.Location = new System.Drawing.Point(54, 167);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 157);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 135);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -146,7 +147,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox2.Location = new System.Drawing.Point(404, 167);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(221, 157);
+            this.pictureBox2.Size = new System.Drawing.Size(240, 135);
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
@@ -170,7 +171,7 @@
             // 
             // convertButton
             // 
-            this.convertButton.Location = new System.Drawing.Point(54, 553);
+            this.convertButton.Location = new System.Drawing.Point(54, 860);
             this.convertButton.Name = "convertButton";
             this.convertButton.Size = new System.Drawing.Size(75, 23);
             this.convertButton.TabIndex = 15;
@@ -178,11 +179,19 @@
             this.convertButton.UseVisualStyleBackColor = true;
             this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
             // 
+            // toolboxCustomTrackBar1
+            // 
+            this.toolboxCustomTrackBar1.Location = new System.Drawing.Point(54, 494);
+            this.toolboxCustomTrackBar1.Name = "toolboxCustomTrackBar1";
+            this.toolboxCustomTrackBar1.Size = new System.Drawing.Size(516, 340);
+            this.toolboxCustomTrackBar1.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 826);
+            this.ClientSize = new System.Drawing.Size(1051, 1021);
+            this.Controls.Add(this.toolboxCustomTrackBar1);
             this.Controls.Add(this.convertButton);
             this.Controls.Add(this.lastFrameLabel);
             this.Controls.Add(this.firstFrameLabel);
@@ -221,6 +230,7 @@
         private System.Windows.Forms.Label firstFrameLabel;
         private System.Windows.Forms.Label lastFrameLabel;
         private System.Windows.Forms.Button convertButton;
+        private ToolboxCustomTrackBar toolboxCustomTrackBar1;
     }
 }
 
