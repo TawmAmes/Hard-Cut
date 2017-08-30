@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.customTrackBarLabel = new System.Windows.Forms.Label();
             this.inputFileLabel = new System.Windows.Forms.Label();
             this.outputFileLabel = new System.Windows.Forms.Label();
             this.inputFileTextBox = new System.Windows.Forms.TextBox();
@@ -41,18 +41,19 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.firstFrameLabel = new System.Windows.Forms.Label();
             this.lastFrameLabel = new System.Windows.Forms.Label();
+            this.convertButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // customTrackBarLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 385);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Custom Track Bar:";
+            this.customTrackBarLabel.AutoSize = true;
+            this.customTrackBarLabel.Location = new System.Drawing.Point(29, 385);
+            this.customTrackBarLabel.Name = "customTrackBarLabel";
+            this.customTrackBarLabel.Size = new System.Drawing.Size(95, 13);
+            this.customTrackBarLabel.TabIndex = 2;
+            this.customTrackBarLabel.Text = "Custom Track Bar:";
             // 
             // inputFileLabel
             // 
@@ -103,6 +104,7 @@
             ".mp4",
             ".mkv",
             ".mov"});
+            this.fileFormatComboBox.SelectedText = ".mp4";
             this.fileFormatComboBox.Location = new System.Drawing.Point(351, 47);
             this.fileFormatComboBox.Name = "fileFormatComboBox";
             this.fileFormatComboBox.Size = new System.Drawing.Size(108, 21);
@@ -110,9 +112,9 @@
             // 
             // outputRichTextBox
             // 
-            this.outputRichTextBox.Location = new System.Drawing.Point(142, 503);
+            this.outputRichTextBox.Location = new System.Drawing.Point(54, 592);
             this.outputRichTextBox.Name = "outputRichTextBox";
-            this.outputRichTextBox.Size = new System.Drawing.Size(498, 96);
+            this.outputRichTextBox.Size = new System.Drawing.Size(551, 96);
             this.outputRichTextBox.TabIndex = 9;
             this.outputRichTextBox.Text = "";
             // 
@@ -166,11 +168,22 @@
             this.lastFrameLabel.TabIndex = 14;
             this.lastFrameLabel.Text = "Last Frame";
             // 
+            // convertButton
+            // 
+            this.convertButton.Location = new System.Drawing.Point(54, 553);
+            this.convertButton.Name = "convertButton";
+            this.convertButton.Size = new System.Drawing.Size(75, 23);
+            this.convertButton.TabIndex = 15;
+            this.convertButton.Text = "Convert";
+            this.convertButton.UseVisualStyleBackColor = true;
+            this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 627);
+            this.ClientSize = new System.Drawing.Size(1051, 826);
+            this.Controls.Add(this.convertButton);
             this.Controls.Add(this.lastFrameLabel);
             this.Controls.Add(this.firstFrameLabel);
             this.Controls.Add(this.pictureBox2);
@@ -183,7 +196,7 @@
             this.Controls.Add(this.inputFileTextBox);
             this.Controls.Add(this.outputFileLabel);
             this.Controls.Add(this.inputFileLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.customTrackBarLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -194,7 +207,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label customTrackBarLabel;
         private System.Windows.Forms.Label inputFileLabel;
         private System.Windows.Forms.Label outputFileLabel;
         private System.Windows.Forms.TextBox inputFileTextBox;
@@ -207,6 +220,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label firstFrameLabel;
         private System.Windows.Forms.Label lastFrameLabel;
+        private System.Windows.Forms.Button convertButton;
     }
 }
 

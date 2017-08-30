@@ -62,7 +62,7 @@ namespace HardCut
                     //SelectionChanged(this, null);
                     AnythingChanged(this, null);
                 }
-
+                MinChanged = true;
                 Invalidate();
             }
         }
@@ -78,7 +78,9 @@ namespace HardCut
                     //SelectionChanged(this, null);
                     AnythingChanged(this, null);
                 }
+                MaxChanged = true;
                 Invalidate();
+                MaxChanged = false;
             }
         }
         
@@ -93,6 +95,7 @@ namespace HardCut
                     //ValueChanged(this, null);
                     AnythingChanged(this, null);
                 }
+                ValueChanged = true;
                 Invalidate();
             }
         }
@@ -107,14 +110,26 @@ namespace HardCut
             }
         }
 
+        public Boolean MinChanged
+        {
+            get; private set;
+        }
+        public Boolean ValueChanged
+        {
+            get; private set;
+        }
+        public Boolean MaxChanged
+        {
+            get; private set;
+        }
+
         #endregion
 
         //Fired when SelectedMin or SelectedMax changes.
-        public event EventHandler SelectionChanged;
-        //change this to only redraw one side of the selection?
+        //public event EventHandler SelectionChanged;
 
         //Fired when Value changes.
-        public event EventHandler ValueChanged;
+        //public event EventHandler ValueChanged;
 
         //Fired if anything changes
         public event EventHandler AnythingChanged;
@@ -251,6 +266,11 @@ namespace HardCut
         //To know which thumb is moving
         enum MovingMode { MovingValue, MovingMin, MovingMax }
         MovingMode movingMode;
+
+        public String AllValues()
+        {
+            return String.Format("{0}\t{1}\t{2}", SelectedMin, Value, SelectedMax);
+        }
 
     }
 }
