@@ -53,11 +53,6 @@ namespace HardCut
             }
         }
 
-        private void customTrackBar1_AnythingChanged(object sender, EventArgs e)
-        {
-            outputRichTextBox.Text = customTrackBar1.AllValues();
-        }
-
         private void gatherFrames()
         {
             //TODO: use the FFMpeg code to gather frames at X and Y times;
@@ -86,8 +81,8 @@ namespace HardCut
         private void convertButton_Click(object sender, EventArgs e)
         {
             //need to account for framerate
-            int startTime = customTrackBar1.SelectedMin;
-            int endTime = customTrackBar1.SelectedMax;
+            int startTime = 0;
+            int endTime = 2;
 
             outputRichTextBox.ResetText();
             Process process = new Process();
@@ -191,6 +186,16 @@ namespace HardCut
                 outputRichTextBox.AppendText(resultLine + "\n");
             }
             process.Close();
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point pointedValue = PointToClient(new Point(e.X, e.Y));
+            /*outputRichTextBox.Text = String.Format("X: {0}\tY: {1}\ne.X: {2}\te.Y: {3}", 
+                pointedValue.X.ToString(), pointedValue.Y.ToString(),
+                e.X, e.Y);
+                */
+
         }
     }
 }

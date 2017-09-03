@@ -141,11 +141,10 @@ namespace HardCut
             Value = (Max - Min) / 2;
             SelectedMax = Max;
 
-            SliderWidth = SliderWidth / (Max - Min); //this line is horrible
+            //SliderWidth = SliderWidth / (Max - Min); //this line is horrible
 
             InitializeComponent();
 
-            
 
             //Avoid flickering
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -247,18 +246,18 @@ namespace HardCut
             int pointedValue = Min + e.X * (Max - Min) / Width;
             if (movingMode == MovingMode.MovingValue)
             {
-                if (pointedValue <= Max && pointedValue >= Min)
-                    Value = pointedValue;
+                //if (pointedValue <= Max && pointedValue >= Min)
+                Value = pointedValue;
             }
             else if (movingMode == MovingMode.MovingMin)
             {
-                if (pointedValue < SelectedMax && pointedValue >= Min)
-                    SelectedMin = pointedValue;
+                //if (pointedValue < SelectedMax && pointedValue >= Min)
+                SelectedMin = pointedValue;
             }
             else if (movingMode == MovingMode.MovingMax)
             {
-                if (pointedValue > SelectedMin && pointedValue <= Max)
-                    SelectedMax = pointedValue;
+                //if (pointedValue > SelectedMin && pointedValue <= Max)
+                SelectedMax = pointedValue;
             }
         }
 
